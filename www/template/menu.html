@@ -1,0 +1,70 @@
+<!--  -->
+<!-- Hide tabs --> 
+<ion-view hide-tabs view-title="Menu" class="col">
+
+<!--
+<ion-view view-title="Menu" class="col"> -->
+<!-- Using Grid to use CSS Flexible Box Layout Module -->
+<!--class="col" meaning column-->
+    
+    <!--This header would be overlapped by <ion-nav-bar>
+    <ion-header-bar align-title="left" class="bar-positive has-tabs-top">
+        <h1 class="title">I should be overlapped</h1>
+    </ion-header-bar>
+    -->
+    <!--This subheader bar will be display under <ion-nav-bar>-->
+    <ion-subheader-bar class="bar bar-subheader">
+        <h2 class="title">{{restName}}</h2>
+    </ion-subheader-bar>
+    
+    <!-- Add class "has-subheader" to leave space for subheader and separeate ion-content from subheader -->
+    <!-- Add class "has-footer" to leave space for footer and separeate ion-content from footer -->
+    <!-- Add class "has-tabs" to leave space for tabs and separeate ion-content from tabs -->
+    <!-- Class "col col-33" means this is a column, 33 means covering 33% of screen -->
+    <ion-content class="has-subheader has-footer has-tabs col col-33" >
+        <ion-list ng-controller="menuListCtrl">
+            <!-- Display menu list, get user selection -->
+            <ion-item ng-repeat="type in menu" ng-click="setSelected(type)">
+                <p>{{type}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    
+    <!-- Class "col-67 col-offset-33", 67 means covering 33% of screen, col-offset-33 means column be offset form the left 33% -->
+    <ion-content class="has-subheader has-footer has-tabs col col-67 col-offset-33" ng-controller="itemListCtrl">
+        <ion-list>
+            <!-- Display items list, update after user select other menu -->
+            <ion-item collection-repeat="item in type" class="item-thumbnail-left item-button-right">
+                <img ng-src="{{item.img}}"></img>
+                <h2>{{item.name}}</h2>
+                <h3>${{item.price}}</h3>
+                <!-- 
+                <ion-item class="item-right">asd</ion-item> -->
+                <!--  -->
+                <div class="buttons">
+                    <button class="button ion ion-minus" ng-show="item.minusButton" ng-click="orderMinus(item)"></button>
+                    <button class="button-clear" ng-show="item.countNum" disabled='true'>
+                        {{item.num}} 
+                    </button>
+                    <button class="button ion ion-plus" ng-click="orderPlus(item)"></button>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    
+    <!-- footer bar class="has-tabs" -->
+    <ion-footer-bar class="bar-dark has-tabs" ng-controller="SummaryCtrl">
+        <div class="title">Sum Price : $ {{summary}}</div>
+<!-- 
+        <a class="button icon-right ion-chevron-right button-clear button-light" ui-sref="confirmOrder()">Confirm Order</a>
+         -->
+         <a class="button icon-right ion-chevron-right button-clear button-light" ng-click = "confirmOrder()">Confirm Order</a>
+    </ion-footer-bar>
+    
+    <!-- Another way to show footer bar -->
+    <!--
+    <div class="bar bar-footer bar-stable has-tabs">
+        <div class="title">Footer</div>
+    </div>
+-->
+</ion-view>

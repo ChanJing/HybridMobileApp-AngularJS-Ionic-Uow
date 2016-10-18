@@ -1,0 +1,106 @@
+<!---->
+<ion-view view-title="Home">
+    
+    <!--Add two button on <ion-nav-bar>-->
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-location"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+         <button class="button button-icon icon ion-android-search"></button>
+    </ion-nav-buttons>
+    
+    <!--This header would be overlapped by <ion-nav-bar>
+    <ion-header-bar align-title="left" class="bar-positive">
+        <h1 class="title">I should be overlapped</h1>
+    </ion-header-bar>
+    -->
+    
+    <!--This subheader bar will be display under <ion-nav-bar>-->
+    <ion-subheader-bar class="bar bar-subheader">
+        <div class=" button-bar">
+            <button class="button button-light icon-right ion-android-arrow-dropdown" ng-click="popover.show($event)"  ng-controller="typeCtrl">
+                type
+            </button>
+            <button class="button button-light icon-right ion-android-arrow-dropdown" ng-click="popover.show($event)"  ng-controller="sortCtrl">
+                sort
+            </button>
+            <button class="button button-light icon-right ion-android-arrow-dropdown" ng-click="popover.show($event)"  ng-controller="discountCtrl">
+                discount
+            </button>
+        </div>
+    </ion-subheader-bar>
+    
+    <!-- Add class to ion-content to show subheader -->
+    <ion-content class="has-subheader has-tabs" ng-controller="restaurantList">
+        <!-- href="#/name of html/{{}}" OR ui-sref="state({id:'',name:''})"-->
+        
+        <ion-list>
+            <!-- List the response from url, showing numberOfItemsToDisplay items once -->
+            <!-- numberOfItemsToDisplay would be change in loadMore() of infinite-scroll-->
+            <!-- href Or ui-sref="menu({})"-->
+            <!-- Change to menu state with {{params}}-->
+            <ion-item collection-repeat="rest in restaurants | limitTo : numberOfItemsToDisplay | orderBy : rating" class="item-thumbnail-left" href="#/tab/home/menu/{{rest.menuList}}">
+                <!--class="item item-icon-right" or "item-button-right"-->
+                <img ng-src="{{rest.img}}"></img>
+                <h2>{{rest.name}}</h2>
+                <h3>{{rest.type}}</h3>
+                <!--Showing the rating star according to the "rest.rating" the max is "5"-->
+                <rating ng-model="rest.rating" max="5" readonly="readOnly"></rating>
+                <h3>{{rest.sale}} per month</h3>
+                <!-- Something wrong about ion-chevron-right or button with it-->
+                <!--
+                <button class="button button-clear">
+                    <i class="icon ion-chevron-right"></i>
+                </button>
+                -->
+            </ion-item>
+        </ion-list>
+        <!-- Call function() to get more data when users get to the bottom of he page-->
+        <!-- When loading data, showing the spinner-->
+        <ion-infinite-scroll on-infinite="loadMore()" spinner="android">
+        </ion-infinite-scroll>
+    </ion-content>
+    
+    <!-- Template of type popover-->
+    <script id="type-popover.html" type="text/ng-template">
+        <ion-popover-view class="popover-style">
+            <ion-content>
+                    <ion-list ng-controller="typelistCtrl" ng-click="popover.hide()">
+                        <!-- Using ng-model to set pre-selected-->
+                        <!-- Using ng-change to monitor the change of radio list-->
+                        <ion-radio ng-model="data.choice" ng-value="type.value" ng-repeat="type in types" ng-change="changeRest(type)">
+                            {{type.text}}
+                        </ion-radio>
+                    </ion-list>
+            </ion-content>
+        </ion-popover-view>
+    </script>
+    
+    <!-- Template of sort popover-->
+    <script id="sort-popover.html" type="text/ng-template">
+        <ion-popover-view class="popover-style">
+            <ion-content>
+                <ion-list ng-controller="sortlistCtrl">
+                    <!-- Using ng-model to set pre-selected-->
+                    <ion-radio ng-model="data.choice" ng-value="sort.value" ng-repeat="sort in sorts" ng-change="changeSort(sort)">
+                        {{sort.text}}
+                    </ion-radio>
+                </ion-list>
+            </ion-content>
+        </ion-popover-view>
+    </script>
+    
+    <!-- Template of discount popover-->
+    <script id="discount-popover.html" type="text/ng-template">
+        <ion-popover-view class="popover-style">
+            <ion-content>
+                <ion-list ng-controller="dicountlistCtrl">
+                    <!-- Using ng-model to set pre-selected-->
+                    <ion-radio ng-model="discountChoice" ng-value="discount" ng-repeat="discount in disocunts">
+                        {{discount}}
+                    </ion-radio>
+                </ion-list>
+            </ion-content>
+        </ion-popover-view>
+    </script>
+</ion-view>

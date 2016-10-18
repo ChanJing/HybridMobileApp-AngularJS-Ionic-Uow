@@ -1,0 +1,45 @@
+<!--  -->
+<!-- Hide tabs
+<ion-view hide-tabs view-title="" >
+-->
+<ion-view view-title="Confirm Order" >
+    
+    <!--This header would be overlapped by <ion-nav-bar>
+    <ion-header-bar align-title="left" class="bar-positive has-tabs-top">
+        <h1 class="title">I should be overlapped</h1>
+    </ion-header-bar>
+    -->
+    <!--This subheader bar will be display under <ion-nav-bar>-->
+    <!-- 
+    <ion-subheader-bar class="bar bar-subheader bar-positive">
+        <h2 class="title">Sub Header</h2>
+    </ion-subheader-bar>
+     -->
+    <!-- Add class to ion-content to show footer -->
+    <ion-content class="has-footer padding has-tabs">
+        <ion-list ng-controller="orderListCtrl">
+            <ion-item collection-repeat="item in orders" class="item-thumbnail-left">
+                <img ng-src="{{item.img}}"></img>
+                <h2>Item : {{item.name}}</h2>
+                <h3>Price : $ {{item.price}}</h3>
+                <h3>Number: {{item.num}}</h3>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    
+    <!-- footer bar class="has-tabs" -->
+<!--     <ion-footer-bar class="bar-assertive has-tabs">
+        <div class="title">Footer</div>
+    </ion-footer-bar> -->
+    <ion-footer-bar class="has-tabs bar-dark" ng-controller="amountCtrl">
+        <div class="title">Items : {{amountItems}}  | Sum Price : {{totalPrice}}</div>
+        <a class="button icon-right ion-chevron-right button-clear button-light" ng-click="sendData()">Delivery Info</a>
+    </ion-footer-bar>
+    
+    <!-- Another way to show footer bar -->
+    <!--
+    <div class="bar bar-footer bar-stable has-tabs">
+        <div class="title">Footer</div>
+    </div>
+-->
+</ion-view>

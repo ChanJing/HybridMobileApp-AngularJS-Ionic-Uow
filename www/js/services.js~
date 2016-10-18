@@ -1,0 +1,49 @@
+/**/
+
+angular.module('starter.services', [])
+
+.service('phonegap100Service01',function($http){
+    this.getData=function(){
+        //var testUrl = "http://www.w3schools.com/angular/customers.php";
+        var testUrl = "http://www.phonegap100.com/appapi.php?a=getPortalList&catid=20&page=1&callback=JSON_CALLBACK";
+        return $http.jsonp(testUrl);
+        //var addBe4image = "http://www.phonegap100.com/data/attachment/";
+        //return $http.get(testUrl);
+    }
+})
+
+.factory('myFactory',function($http){
+	
+	var service = {};
+	var baseUrl = 'http://www.phonegap100.com/appapi.php?a=getPortalList&catid=20&page=';
+	var _pageNum = '';
+	var finalUrl='';
+	
+	var makeUrl = function () {
+		finalUrl = baseUrl + _pageNum + '&callback=JSON_CALLBACK';
+		return finalUrl;
+	}
+	service.setPage = function (pageNum) {
+		_pageNum = pageNum;
+	}
+	
+	service.getPage = function () {
+		return _pageNum;
+	}
+	/*
+	service.callUrl = function(){
+		makeUrl();
+		$http.jsonp(finalUrl).success(function(response) {
+			//$scope.names = response.records;
+			return response;
+		});
+	}
+	*/
+	
+	service.getData=function(){
+		makeUrl();	
+		return $http.jsonp(finalUrl);
+	}
+	
+	return service;
+})

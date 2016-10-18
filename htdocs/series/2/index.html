@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="customersCtrl"> 
+	<p>{{names}}</p>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+
+app.controller('customersCtrl', function($scope, $http) {
+  $http.get("https://localhost/series/2/tryme.php")
+  .success(function (response) {$scope.names = response;});
+});
+</script>
+
+</body>
+</html>

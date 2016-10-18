@@ -1,0 +1,104 @@
+<!---->
+<ion-view view-title="Home">
+    
+    <!--Add two button on <ion-nav-bar>-->
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-location"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+         <button class="button button-icon icon ion-android-search"></button>
+    </ion-nav-buttons>
+    
+    <!--This header would be overlapped by <ion-nav-bar>
+    <ion-header-bar align-title="left" class="bar-positive">
+        <h1 class="title">I should be overlapped</h1>
+    </ion-header-bar>
+    -->
+    
+    <!--This subheader bar will be display under <ion-nav-bar>-->
+    <div class="bar bar-subheader" class="bar-positive">
+        <div class=" button-bar">
+            <button class="button button-light icon-right ion-android-arrow-dropdown" ng-click="popover.show($event)"  ng-controller="typeCtrl">
+                type
+            </button>
+            <button class="button button-light icon-right ion-android-arrow-dropdown" ng-click="popover.show($event)"  ng-controller="sortCtrl">
+                sort
+            </button>
+            <button class="button button-light icon-right ion-android-arrow-dropdown" ng-click="popover.show($event)"  ng-controller="discountCtrl">
+                discount
+            </button>
+        </div>
+    </div>
+    
+    <!-- Add class to ion-content to show subheader -->
+    <ion-content class="has-subheader has-tabs">
+        <!--hr  ef="#/name of html/id"-->
+        <a class="button" href="#/tab/menu">jump</a>
+        
+        <ion-list ng-controller="restaurantList">
+            <ion-item collection-repeat="x in names" class="item-thumbnail-left">
+                <img ng-src="{{img}}">
+                <h3>{{x.title}}</h3>
+                <h3>{{x.username}}</h3>
+                <h4>{{x.catid}}</h4>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    
+    <!-- Template of type popover-->
+    <script id="type-popover.html" type="text/ng-template">
+        <ion-popover-view class="popover-style">
+            <ion-content>
+                    <ion-list>
+                        <ion-item>
+                            1
+                        </ion-item>
+                        <ion-item>
+                            2
+                        </ion-item>
+                        <ion-item>
+                            3
+                        </ion-item>
+                    </ion-list>
+            </ion-content>
+        </ion-popover-view>
+    </script>
+    
+    <!-- Template of sort popover-->
+    <script id="sort-popover.html" type="text/ng-template">
+        <ion-popover-view class="popover-style">
+            <ion-content>
+                <ion-list>
+                    <ion-item>
+                        4
+                    </ion-item>
+                    <ion-item>
+                        5
+                    </ion-item>
+                    <ion-item>
+                        6
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+        </ion-popover-view>
+    </script>
+    
+    <!-- Template of discount popover-->
+    <script id="discount-popover.html" type="text/ng-template">
+        <ion-popover-view class="popover-style">
+            <ion-content>
+                <ion-list>
+                    <ion-item>
+                        7
+                    </ion-item>
+                    <ion-item>
+                        8
+                    </ion-item>
+                    <ion-item>
+                        9
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+        </ion-popover-view>
+    </script>
+</ion-view>

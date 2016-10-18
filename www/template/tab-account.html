@@ -1,0 +1,98 @@
+<!---->
+<ion-view view-title="Account" ng-controller="accountCtrl">
+    <ion-nav-buttons side="right">
+        <button class="button" ng-click="openModal(1);">Log in</button>
+    </ion-nav-buttons>
+    <ion-content class="padding has-tabs">
+        <ion-list>
+            <ion-item class="item-positive">
+                User Name:
+                <br/><br/>
+                Email:
+                <br/>
+            </ion-item>
+            <br/>
+            <ion-item class="icon ion-ios-heart">
+                My Favorite
+            </ion-item>
+            <ion-item class="icon ion-email">
+                Messages
+            </ion-item>
+            <br/>
+            <ion-item class="icon ion-gear-a">
+                Setting
+            </ion-item>
+            <ion-item class="icon ion-earth">
+                Service Center
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    
+    <!-- Log in model-->
+    <script id="login-modal.html" type="text/ng-template">
+        <ion-modal-view>
+            <ion-header-bar class="bar-positive">
+                <button class="button" side="left" ng-click="closeModal(1);">Close</button>
+                <h2 class="title">Log in</h2>
+                <button class="button" side="right" ng-click="openModal(2);">Sign up</button>
+            </ion-header-bar>
+            <ion-content>
+                <ion-list>
+                    <ion-item class="item-input">
+                        <label>
+                            <span class="input-label">Email</span>
+                            <input type="text" placeholder="@gmail.com"></input>
+                        </label>
+                    </ion-item>
+                    <ion-item class="item-input">
+                        <label>
+                            <span class="input-label">Password</span>
+                            <input type="password"></input>
+                        </label>
+                    </ion-item>
+                </ion-list>
+                <button class="button button-full button-positive">Log in</button>
+            </ion-content>
+        </ion-modal-view>
+    </script>
+
+    <!-- Sign up model-->
+    <script id="signup-modal.html" type="text/ng-template">
+        <ion-modal-view>
+            <ion-header-bar class="bar-positive">
+                <button class="button" side="left" ng-click="closeModal(2);">Close</button>
+                <h2 class="title">Sign up</h2>
+            </ion-header-bar>
+            <ion-content>
+                <ion-list>
+                    <ion-item class="item-input">
+                        <label>
+                            <span class="input-label">User Name</span>
+                            <input type="text" placeholder="Caleb"></input>
+                        </label>
+                    </ion-item>
+                    <ion-item class="item-input">
+                        <label>
+                            <span class="input-label">Email</span>
+                            <input type="text" placeholder="@gmail.com"></input>
+                        </label>
+                    </ion-item>
+                    <ion-item class="item-input">
+                        <label>
+                            <span class="input-label">Password</span>
+                            <input type="password"></input>
+                        </label>
+                    </ion-item>
+                    <ion-item class="item-input">
+                        <label>
+                            <span class="input-label">Confirm Password</span>
+                            <input type="password"></input>
+                        </label>
+                    </ion-item>
+                </ion-list>
+                <button class="button button-full button-positive">Sign up</button>
+            </ion-content>
+        </ion-modal-view>
+    </script>
+    
+</ion-view>

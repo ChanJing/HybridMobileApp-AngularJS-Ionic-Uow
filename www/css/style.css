@@ -1,0 +1,31 @@
+/* Empty. Add your own CSS if you like */
+
+/*If tabs overlap bar-footer, use this CSS*/
+/*
+.has-footer.has-tabs {
+    bottom: 93px;
+}
+.has-tabs, .bar-footer.has-tabs {
+    bottom: 49px;
+}
+*/
+
+/* Setting the width of popover template*/
+.popover-style{
+    width: 160px;
+}
+
+/* Setting the color of (like) heart*/
+.ion-ios-heart{
+    color: darkred;
+}
+
+/* Setting the rating stars to be inline(horizontal)*/
+ul.rating li {
+  display: inline;
+  background: none;
+}
+
+.small-ion {
+    font-size:25px !important;
+}
