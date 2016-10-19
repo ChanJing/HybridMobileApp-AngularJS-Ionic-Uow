@@ -12,6 +12,8 @@ Drop down discount-list | Home View with Fast Food Restaurants
 :---------------------: | :----------------------------------:
 <img src="images/Drop down discount-list.png" width="250"/> | <img src="images/Home View with Fast Food Restaurants.png" width="250"/> 
 
+#### After Choose a Restaurant
+
 Menu view | Menu view with DRINK
 :-------: | :------------------:
 <img src="images/Menu view.png" width="420"/> | <img src="images/Menu view with “DRINK”.png" width="420"/> 
