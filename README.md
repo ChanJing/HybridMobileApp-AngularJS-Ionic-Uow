@@ -14,8 +14,8 @@ Drop down discount-list | Home View with Fast Food Restaurants
 
 #### After Choose a Restaurant
 
-Menu view 
-:-------: 
+Menu view |
+:-------: |
 <img src="images/Menu view.png" width="420"/>
 
 ## Ionic App Base
