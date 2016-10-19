@@ -14,7 +14,7 @@ Drop down discount-list | Home View with Fast Food Restaurants
 
 Menu view | Menu view with DRINK
 :-------: | :------------------:
-<img src="images/Menu view.png" width="400"/> | <img src="images/Menu view with “DRINK”.png" width="400"/> 
+<img src="images/Menu view.png" width="420"/> | <img src="images/Menu view with “DRINK”.png" width="420"/> 
 
 ## Ionic App Base
 
