@@ -6,7 +6,7 @@ This project is aim to implement a hybrid mobile application using AngularJS and
 
 Home View | Drop down type-list | Drop down sort-list
 --------- | ------------------- | -------------------
-<img src="images/Home View.png" width="250"/> | <img src="images/ 	Drop down type-list.png" width="250"/> | <img src="images/Drop down sort-list.png" width="250"/>
+<img src="images/Home View.png" width="250"/> | <img src="images/Drop down type-list.png" width="250"/> | <img src="images/Drop down sort-list.png" width="250"/>
 
 ## Ionic App Base
 
