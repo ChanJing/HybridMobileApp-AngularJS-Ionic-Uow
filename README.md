@@ -5,15 +5,16 @@ This project is aim to implement a hybrid mobile application using AngularJS and
 ## ScreenShots
 
 Home View | Drop down type-list | Drop down sort-list
---------- | ------------------- | -------------------
+:-------: | :-----------------: | :-----------------:
 <img src="images/Home View.png" width="250"/> | <img src="images/Drop down type-list.png" width="250"/> | <img src="images/Drop down sort-list.png" width="250"/>
 
 Drop down discount-list | Home View with Fast Food Restaurants
------------------------ | :----------------------------------:
+:---------------------: | :----------------------------------:
 <img src="images/Drop down discount-list.png" width="250"/> | <img src="images/Home View with Fast Food Restaurants.png" width="250"/> 
 
-
-
+Menu view | Menu view with DRINK
+:-------: | :------------------:
+<img src="images/Menu view.png" width="250"/> | <img src="images/Menu view with “DRINK”.png" width="250"/> 
 
 ## Ionic App Base
 
