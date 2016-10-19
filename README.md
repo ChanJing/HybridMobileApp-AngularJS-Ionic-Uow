@@ -1,6 +1,6 @@
 # Hybrid Delivery Mobile Application
 
-This project is aim to implement a hybrid mobile application using AngularJS and Ionic.
+This project is aim to implement a hybrid mobile application using AngularJS and Ionic. This is an One-Page-Application.
 
 ## ScreenShots
 
